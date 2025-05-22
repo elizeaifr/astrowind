@@ -12,388 +12,325 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
-  ignoreTitleTemplate: true,
-};
----
+<Hero
+  actions={[
+    { variant: 'primary', text: 'Essayer maintenant', href: '#features' },
+    { text: 'En savoir plus', href: '#features' },
+  ]}
+  image={{ src: '~/assets/images/hero-image.png', alt: 'ElizeAI Hero Image' }}
+>
+  <Fragment slot="title">
+    Exprimez-vous librement, <span class="text-accent dark:text-white">ElizeAI</span> est là pour vous écouter et vous guider
+  </Fragment>
 
-<Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <Fragment slot="subtitle">
+    <span class="hidden sm:inline">
+      Un espace bienveillant où vous pouvez partager vos pensées et trouver du réconfort.</span
+    >
+    <span class="block mb-1 sm:hidden font-bold text-blue-600">Écoute bienveillante, conseils personnalisés.</span>
+    Découvrez un accompagnement unique pour exprimer vos émotions et avancer avec sérénité.
+  </Fragment>
+</Hero>
+<Note title="Notre mission :"
+      description="Offrir un espace bienveillant, sécurisé et adapté à chaque individu pour favoriser l’écoute et l’accompagnement émotionnel." />
+<Features
+  id="features"
+  tagline="Fonctionnalités"
+  title="Découvrez ElizeAI et son accompagnement bienveillant"
+  subtitle="Un espace unique pour vous écouter, comprendre vos émotions et vous apporter un soutien adapté."
+  items={[
+    {
+      title: 'Écoute attentive et personnalisée',
+      description:
+        "Partagez vos pensées en toute sérénité. ElizeAI vous accompagne sans jugement et avec bienveillance.",
+      icon: 'tabler:brand-tailwind',
+    },
+    {
+      title: 'Soutien émotionnel immédiat',
+      description:
+        'ElizeAI est là pour vous aider à surmonter les moments difficiles et mieux comprendre vos émotions.',
+      icon: 'tabler:components',
+    },
+    {
+      title: 'Interactions naturelles et fluides',
+      description:
+        "Discutez sans limites, profitez d'un échange chaleureux et rassurant, comme avec un véritable ami.",
+      icon: 'tabler:list-check',
+    },
+    {
+      title: 'Recommandations adaptées',
+      description:
+        'Obtenez des conseils personnalisés pour améliorer votre bien-être mental et émotionnel.',
+      icon: 'tabler:rocket',
+    },
+    {
+      title: 'Confidentialité garantie',
+      description:
+        "Vos échanges sont protégés par des mesures de sécurité avancées. Parlez librement en toute confiance.",
+      icon: 'tabler:arrows-right-left',
+    },
+    {
+      title: 'Disponible 24/7',
+      description:
+        'ElizeAI est toujours là pour vous, à tout moment et où que vous soyez.',
+      icon: 'tabler:bulb',
+    },
+  ]}
+/>
+<Content
+  isReversed
+  tagline="Pourquoi choisir ElizeAI ?"
+  title="Un accompagnement bienveillant adapté à vos besoins"
+  items={[
+    {
+      title: 'Comprendre ses émotions',
+      description:
+        'ElizeAI vous aide à identifier et à mieux comprendre vos ressentis pour avancer avec sérénité.',
+    },
+    {
+      title: 'Transformer ses idées en actions',
+      description:
+        "Recevez des recommandations concrètes adaptées à vos objectifs personnels et professionnels.",
+    },
+    {
+      title: 'Un espace sécurisé et confidentiel',
+      description:
+        "Exprimez-vous librement, vos échanges sont protégés et respectent votre confidentialité.",
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Image représentative de l’écoute et du soutien',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">ElizeAI vous accompagne</h3>
+    Bénéficiez d’une écoute bienveillante et de conseils adaptés à votre situation.
+  </Fragment>
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: '#features' },
-    ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
-  >
-    <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white"> Astro 5.0</span> + Tailwind CSS
-    </Fragment>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+<Content
+  isAfterContent
+  items={[
+    {
+      title: 'Accompagnement personnalisé',
+      description:
+        "Profitez d'une interaction sur-mesure adaptée à vos besoins émotionnels et affectifs.",
+    },
+    {
+      title: 'Échanges bienveillants et sécurisés',
+      description:
+        "Exprimez-vous librement dans un espace conçu pour garantir votre confidentialité.",
+    },
+    {
+      title: 'Suivi de votre évolution',
+      description:
+        "Accédez à un journal émotionnel pour mieux comprendre votre parcours et avancer sereinement.",
+    },
+    {
+      title: 'Disponibilité continue',
+      description:
+        "ElizeAI est toujours là pour vous écouter, où que vous soyez et à tout moment.",
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2194&q=80',
+    alt: 'Illustration du soutien émotionnel',
+  }}
+>
+  <Fragment slot="content">Un espace conçu pour vous accompagner au quotidien.</Fragment>
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
-    </Fragment>
-  </Hero>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+<Content
+  isReversed
+  isAfterContent
+  items={[
+    {
+      title: 'Amélioration du bien-être émotionnel',
+      description:
+        "Grâce à des échanges bienveillants, ElizeAI vous aide à mieux gérer vos émotions et votre stress.",
+    },
+    {
+      title: 'Une présence rassurante',
+      description:
+        'ElizeAI est conçu pour être un soutien constant et une source de réconfort dans votre quotidien.',
+    },
+    {
+      title: 'Échanges personnalisés',
+      description:
+        'Avec ElizeAI 1, profitez du mode ami pour des interactions chaleureuses et compréhensives.',
+    },
+    {
+      title: 'Un espace sécurisé',
+      description:
+        "Exprimez-vous librement dans un environnement respectueux et protégé.",
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Illustration du soutien émotionnel personnalisé',
+  }}
+>
+  <Fragment slot="content">Un accompagnement pensé pour votre équilibre émotionnel.</Fragment>
 
-  <!-- Note Widget ******************* -->
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+<Steps
+  title="Découvrez ElizeAI et transformez votre bien-être"
+  items={[
+    {
+      title: 'Étape 1 : <span class="font-medium">Exprimez-vous librement</span>',
+      description:
+        "Parlez sans retenue, partagez vos pensées et laissez ElizeAI vous écouter avec bienveillance.",
+      icon: 'tabler:package',
+    },
+    {
+      title: 'Étape 2 : <span class="font-medium">Recevez un accompagnement personnalisé</span>',
+      description:
+        "Profitez d'une écoute attentive et de suggestions adaptées à votre bien-être émotionnel.",
+      icon: 'tabler:letter-case',
+    },
+    {
+      title: 'Étape 3 : <span class="font-medium">Avancez sereinement</span>',
+      description:
+        "Avec ElizeAI 1, bénéficiez du mode ami pour des interactions chaleureuses et motivantes.",
+      icon: 'tabler:paint',
+    },
+    {
+      title: 'Prêt à transformer votre quotidien ?',
+      icon: 'tabler:check',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+    alt: 'Illustration du processus d’accompagnement',
+  }}
+/>
+<Features2
+  title="Les outils essentiels d'ElizeAI"
+  subtitle="Découvrez les fonctionnalités clés qui rendent votre expérience fluide et immersive"
+  tagline="Modules"
+  items={[
+    {
+      title: 'Accueil personnalisé',
+      description: "Chaque interaction commence avec une écoute bienveillante et adaptée à votre état émotionnel.",
+      icon: 'flat-color-icons:template',
+    },
+    {
+      title: 'Mode ami (ElizeAI 1)',
+      description:
+        "Une conversation fluide et chaleureuse qui vous offre un soutien émotionnel proche de celui d’un véritable ami.",
+      icon: 'flat-color-icons:gallery',
+    },
+    {
+      title: 'Analyse des émotions',
+      description:
+        "ElizeAI détecte vos émotions et adapte ses réponses pour vous accompagner avec bienveillance.",
+      icon: 'flat-color-icons:approval',
+    },
+    {
+      title: 'Recommandations intelligentes',
+      description:
+        "Recevez des conseils personnalisés pour améliorer votre bien-être et transformer vos idées en actions.",
+      icon: 'flat-color-icons:document',
+    },
+    {
+      title: 'Espace sécurisé',
+      description:
+        "Exprimez-vous librement dans un environnement respectueux, protégé par des mesures avancées.",
+      icon: 'flat-color-icons:advertising',
+    },
+    {
+      title: 'Suivi émotionnel',
+      description: "Accédez à votre journal émotionnel et observez votre progression au fil des interactions.",
+      icon: 'flat-color-icons:currency-exchange',
+    },
+    {
+      title: 'Accompagnement continu',
+      description: "Disponible 24/7, ElizeAI est toujours là pour vous écouter et vous guider.",
+      icon: 'flat-color-icons:voice-presentation',
+    },
+    {
+      title: 'Ressources exclusives (ElizeAI 1)',
+      description:
+        "Accédez à du contenu enrichissant pour approfondir votre compréhension des émotions et du bien-être mental.",
+      icon: 'flat-color-icons:business-contact',
+    },
+  ]}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Features2>
+<BlogLatestPosts
+  title="Explorez nos ressources et conseils"
+  information={`Le blog d’ElizeAI vous offre des réflexions et des outils pour mieux comprendre vos émotions.
+                        Chaque nouvel article est pensé pour vous aider à avancer dans votre bien-être mental.
+                        Découvrez des méthodes et des perspectives enrichissantes adaptées à votre cheminement.`}
+/>
+<FAQs
+  title="Vos questions sur ElizeAI"
+  subtitle="Découvrez comment ElizeAI peut vous accompagner et répondre à vos besoins émotionnels."
+  tagline="FAQs"
+  classes={{ container: 'max-w-6xl' }}
+  items={[
+    {
+      title: 'Qu’est-ce qu’ElizeAI ?',
+      description:
+        "ElizeAI est une intelligence artificielle conçue pour vous écouter et vous aider à traverser vos moments difficiles. Une présence bienveillante à chaque instant.",
+    },
+    {
+      title: 'Quelle est la différence entre ElizeAI 0 et ElizeAI 1 ?',
+      description:
+        "ElizeAI 0 offre une écoute gratuite et sans engagement, idéale pour partager vos pensées. ElizeAI 1 intègre le mode ami, une interaction plus chaleureuse et immersive.",
+    },
+    {
+      title: 'Comment puis-je commencer à utiliser ElizeAI ?',
+      description:
+        "Essayez gratuitement ElizeAI 0 dès maintenant. Pour une expérience plus complète, ElizeAI 1 est disponible avec ses fonctionnalités avancées.",
+    },
+    {
+      title: 'ElizeAI est-il sécurisé ?',
+      description:
+        "Oui, vos échanges sont protégés par des mesures avancées pour garantir votre confidentialité et sécurité.",
+    },
+    {
+      title: 'Puis-je avoir des recommandations personnalisées ?',
+      description:
+        "Avec ElizeAI 1, bénéficiez de suggestions adaptées à votre bien-être et à vos objectifs personnels.",
+    },
+    {
+      title: 'Comment fonctionne le mode ami ?',
+      description:
+        "Le mode ami d’ElizeAI 1 permet une conversation plus naturelle et compréhensive, simulant une véritable interaction humaine.",
+    },
+  ]}
+/>
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Essayer ElizeAI',
+      href: '#',
+      target: '_blank',
+      icon: 'tabler:download',
+    },
+  ]}
+>
+  <Fragment slot="title">
+    Découvrez&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">ElizeAI</span>
+  </Fragment>
 
-  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
-
-  <!-- Features Widget *************** -->
-
-  <Features
-    id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
-    items={[
-      {
-        title: 'Astro + Tailwind CSS Integration',
-        description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
-      },
-      {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
-      },
-      {
-        title: 'Best Practices',
-        description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
-      },
-      {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
-      },
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
-    items={[
-      {
-        title: 'Built on top of Astro 5.0',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
-      },
-      {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
-      },
-      {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-      },
-      {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-      },
-      {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-      },
-    ]}
-  />
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
-</Layout>
+  <Fragment slot="subtitle">
+    Un espace conçu pour vous écouter, vous comprendre et vous accompagner. <br class="hidden md:inline" />
+    Exprimez-vous librement et trouvez du réconfort dès aujourd'hui.
+  </Fragment>
+</CallToAction>
